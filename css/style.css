@@ -17,12 +17,18 @@
 
   .card-header {
     height: 200px;
-    background-size: contain;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    transition: transform 0.5s ease;
+    transition: all 0.5s ease;
   }
 
+  .card-header > img{
+    object-fit : fill;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
 
   .card {
     position: relative;
@@ -37,14 +43,6 @@
     border-top-right-radius: 15px;
     background-color: white;
     overflow: hidden;
-  }
-
-  .card img {
-    object-fit: cover;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    width: 100%;
-    height: 200px;
   }
   
   .card-text {
@@ -74,25 +72,29 @@
     transform: scale(1.1);
   }
 
-  .span-heart {
+  .span-menu {
     position: absolute;
     background-color: #dd345f;
-    padding: 15px 15px;
     color: white;
     border-top-left-radius: 15px;
-    transform: translate(-127px,0);
     top:0;
+    left: -50px;
+    transition: left 0.5s ease;
+    pointer-events: none;
   }
 
-
-  @keyframes heart {
-    from {
-      transform: translateX(-180px);
-    }
-    to {
-      transform: translateX(-127px);
-    }
+  .span-menu i{
+    padding: 15px;
   }
+
+  .wrapper{
+    overflow: hidden;
+  }
+
+  .wrapper:hover .span-menu {
+    left: 0;
+  }
+
 
 
   
